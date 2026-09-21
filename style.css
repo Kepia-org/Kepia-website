@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  color: #252525;
+  background: #fff;
+}
+
+header {
+  background: #6b1825;
+  color: white;
+  padding: 25px 7%;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 38px;
+}
+
+header p {
+  margin: 3px 0;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 18px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+}
+
+section {
+  padding: 65px 7%;
+}
+
+section:first-child {
+  background: #f8f2f3;
+  max-width: none;
+}
+
+h2 {
+  color: #6b1825;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #6b1825;
+  margin-top: 28px;
+}
+
+a {
+  color: #6b1825;
+  font-weight: 600;
+}
+
+section:first-child a {
+  display: inline-block;
+  background: #6b1825;
+  color: white;
+  padding: 12px 20px;
+  margin: 6px 5px 6px 0;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+section:first-child a:hover {
+  background: #48101a;
+}
+
+section:nth-of-type(3) {
+  background: #fafafa;
+}
+
+section:nth-of-type(3) h3 {
+  display: inline-block;
+  width: 31%;
+  vertical-align: top;
+  margin-right: 1%;
+}
+
+section:nth-of-type(3) p {
+  display: inline-block;
+  width: 31%;
+  vertical-align: top;
+  margin-right: 1%;
+}
+
+section:nth-of-type(4) {
+  background: #f8f2f3;
+}
+
+section:nth-of-type(4) h3 {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+}
+
+section:nth-of-type(5) {
+  background: #6b1825;
+  color: white;
+}
+
+section:nth-of-type(5) h2,
+section:nth-of-type(5) strong {
+  color: white;
+}
+
+section:nth-of-type(5) a {
+  color: white;
+}
+
+footer {
+  background: #300b12;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 22px 5%;
+  }
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  section {
+    padding: 45px 6%;
+  }
+
+  h2 {
+    font-size: 27px;
+  }
+
+  section:nth-of-type(3) h3,
+  section:nth-of-type(3) p,
+  section:nth-of-type(4) h3 {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+  }
+}
