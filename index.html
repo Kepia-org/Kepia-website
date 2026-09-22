@@ -1,229 +1,1263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KEPIA | Kenya Property Investors Association</title>
-    <meta name="description" content="Kenya Property Investors Association (KEPIA) supports property investors, landlords, tenants, property managers and other property stakeholders in Kenya.">
-  <meta property="og:title" content="KEPIA | Kenya Property Investors Association">
-  <meta property="og:description" content="Defending What's Yours. Property advocacy, education, support and practical property guidance in Kenya.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kepia-org.github.io/Kepia-website/">
-  <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="https://kepia-org.github.io/Kepia-website/">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kenya Property Investors Association | KEPIA</title>
+
+    <meta name="description" content="Kenya Property Investors Association (KEPIA) represents and supports property owners, landlords, tenants, investors and property managers across Kenya.">
+    <meta name="keywords" content="KEPIA, Kenya Property Investors Association, property investors Kenya, landlords Kenya, tenants Kenya, property rights, land disputes, property management">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* TOP BAR */
+        .top-bar {
+            background: #5d1f2d;
+            color: white;
+            padding: 8px 6%;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-bar a {
+            color: white;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: #ffffff;
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            background: #6b2333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 6px;
+            font-size: 17px;
+        }
+
+        .logo-text h2 {
+            color: #5d1f2d;
+            font-size: 18px;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            font-size: 11px;
+            color: #777;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #6b2333;
+        }
+
+        .join-btn {
+            background: #6b2333 !important;
+            color: white !important;
+            padding: 10px 17px;
+            border-radius: 5px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 600px;
+            background:
+                linear-gradient(rgba(72, 22, 34, 0.88), rgba(72, 22, 34, 0.88)),
+                linear-gradient(135deg, #6b2333, #8b4655);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 70px 6%;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.08;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #f0d6dc;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 720px;
+            margin-bottom: 32px;
+            color: #f5e9ec;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #6b2333;
+        }
+
+        .btn-secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        /* GENERAL */
+        section {
+            padding: 80px 6%;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 45px;
+        }
+
+        .section-title .small-title {
+            color: #6b2333;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #4a1724;
+            margin: 10px 0 15px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* INTRO */
+        .intro {
+            background: #faf8f8;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .intro-text h2 {
+            color: #4a1724;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            margin-bottom: 17px;
+            color: #555;
+        }
+
+        .highlight-box {
+            background: #6b2333;
+            color: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 12px 30px rgba(107,35,51,0.2);
+        }
+
+        .highlight-box h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box p {
+            color: #f5e9ec;
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background: white;
+            transition: 0.25s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+            border-color: #d9bbc2;
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #f3e7ea;
+            color: #6b2333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .service-card h3 {
+            color: #4a1724;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* STATS */
+        .stats {
+            background: #5d1f2d;
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 38px;
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            color: #ead9dd;
+            font-size: 14px;
+        }
+
+        /* MEMBERSHIP */
+        .membership {
+            background: #faf8f8;
+        }
+
+        .membership-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .membership-card {
+            background: white;
+            border: 1px solid #e8e8e8;
+            padding: 28px 22px;
+            border-radius: 8px;
+        }
+
+        .membership-card h3 {
+            color: #5d1f2d;
+            margin-bottom: 12px;
+        }
+
+        .membership-card .price {
+            font-size: 25px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .membership-card ul {
+            list-style: none;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .membership-card li {
+            margin-bottom: 8px;
+        }
+
+        .membership-card li::before {
+            content: "✓";
+            color: #6b2333;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* AUDIENCE */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .audience-card {
+            padding: 35px;
+            border-radius: 8px;
+            background: #f8f4f5;
+            border-left: 5px solid #6b2333;
+        }
+
+        .audience-card h3 {
+            color: #4a1724;
+            margin-bottom: 12px;
+            font-size: 25px;
+        }
+
+        .audience-card p {
+            color: #555;
+        }
+
+        /* OKOA */
+        .okoa {
+            background: #ececec;
+        }
+
+        .okoa-box {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            padding: 45px;
+            border-left: 7px solid #6b2333;
+        }
+
+        .okoa-box h2 {
+            color: #5d1f2d;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .okoa-box p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* WHY KEPIA */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .why-number {
+            font-size: 34px;
+            color: #6b2333;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .why-card h3 {
+            color: #4a1724;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* CTA */
+        .cta {
+            background: #6b2333;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 28px;
+            color: #f1e4e7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .cta .btn-primary {
+            color: #6b2333;
+        }
+
+        .cta .btn-secondary {
+            border-color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #35121b;
+            color: white;
+            padding: 60px 6% 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 45px;
+        }
+
+        footer h3 {
+            margin-bottom: 18px;
+        }
+
+        footer p,
+        footer li {
+            color: #d6c4c8;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 9px;
+        }
+
+        footer a {
+            color: #d6c4c8;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: #c8b5ba;
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .intro-grid,
+            .audience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .membership-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 35px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .top-bar {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                padding: 12px 5%;
+            }
+
+            .logo-text h2 {
+                font-size: 15px;
+            }
+
+            .logo-mark {
+                width: 42px;
+                height: 42px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .hero {
+                min-height: 540px;
+                padding: 55px 5%;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .section-title h2,
+            .intro-text h2 {
+                font-size: 30px;
+            }
+
+            .services-grid,
+            .membership-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat h3 {
+                font-size: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .okoa-box {
+                padding: 30px 22px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>KEPIA</h1>
-    <p>Kenya Property Investors Association</p>
-    <p><strong>Defending What's Yours.</strong></p>
+    <!-- TOP CONTACT BAR -->
+    <div class="top-bar">
+        <div>Defending What’s Yours</div>
+        <div>
+            Call / WhatsApp:
+            <a href="tel:+254769545969">0769 545 969</a>
+            &nbsp; | &nbsp;
+            <a href="mailto:info@kepiah.org">info@kepiah.org</a>
+        </div>
+    </div>
 
+    <!-- NAVIGATION -->
     <nav>
-      <a href="#about">About</a> |
-      <a href="#services">Services</a> |
-      <a href="#membership">Membership</a> |
-      <a href="#contact">Contact</a>
+        <div class="logo">
+            <div class="logo-mark">KEPIA</div>
+
+            <div class="logo-text">
+                <h2>KENYA PROPERTY<br>INVESTORS ASSOCIATION</h2>
+                <span>Defending What’s Yours</span>
+            </div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#membership">Membership</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#membership" class="join-btn">Join KEPIA</a></li>
+        </ul>
     </nav>
-  </header>
 
-  <hr>
+    <!-- HERO -->
+    <header class="hero" id="home">
+        <div class="hero-content">
 
-  <main>
+            <div class="hero-tag">
+                KENYA PROPERTY INVESTORS ASSOCIATION
+            </div>
 
-    <section>
-      <h2>Property Stakeholders Deserve a Strong Voice</h2>
-      <p>
-        KEPIA supports property investors, landlords, tenants,
-        property managers and other property stakeholders through
-        advocacy, education, support and practical property guidance.
-      </p>
+            <h1>
+                Protecting Your Property.
+                <span>Protecting Your Rights.</span>
+            </h1>
 
-      <p><strong>Impeccable communication is key.</strong></p>
+            <p>
+                KEPIA brings together property owners, landlords, tenants,
+                investors and property managers to promote responsible property
+                ownership, protect property rights and provide practical support
+                in property-related matters.
+            </p>
 
-      <p>
-        <a href="tel:+254769545969">Call KEPIA: 0769 545 969</a>
-      </p>
+            <div class="hero-buttons">
+                <a href="#membership" class="btn-primary">Become a Member</a>
+                <a href="#contact" class="btn-secondary">Talk to KEPIA</a>
+            </div>
 
-      <p>
-        <a href="https://wa.me/254769545969">WhatsApp KEPIA</a>
-      </p>
+        </div>
+    </header>
+
+    <!-- ABOUT INTRO -->
+    <section class="intro" id="about">
+
+        <div class="intro-grid">
+
+            <div class="intro-text">
+
+                <div class="section-title" style="text-align:left;margin:0 0 25px;">
+                    <div class="small-title">Who We Are</div>
+                    <h2>Standing With Property Stakeholders</h2>
+                </div>
+
+                <p>
+                    The Kenya Property Investors Association (KEPIA) is an
+                    association focused on supporting and representing people
+                    and organisations involved in property ownership,
+                    investment, management and tenancy.
+                </p>
+
+                <p>
+                    Property matters can involve complicated legal,
+                    financial and administrative challenges. KEPIA provides
+                    a platform where members can seek guidance, support,
+                    representation and practical solutions to property-related
+                    challenges.
+                </p>
+
+                <p>
+                    Our work covers property and land matters, tenancy
+                    concerns, dispute support, property management,
+                    documentation, advocacy and member education.
+                </p>
+
+            </div>
+
+            <div class="highlight-box">
+                <h3>Our Commitment</h3>
+
+                <p>
+                    We believe that property owners, investors, landlords,
+                    tenants and managers should have access to reliable
+                    information, responsible representation and practical
+                    support when dealing with property matters.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Impeccable communication is key.</strong>
+                </p>
+            </div>
+
+        </div>
+
     </section>
 
-    <hr>
-
-    <section id="about">
-      <h2>About KEPIA</h2>
-
-      <p>
-        The Kenya Property Investors Association (KEPIA) is a
-        property-focused association supporting investors,
-        landlords, tenants, property managers and other
-        stakeholders in Kenya.
-      </p>
-
-      <p>
-        Our platform promotes property education, advocacy,
-        networking and practical support on property-related
-        matters.
-      </p>
-    </section>
-
-    <hr>
-
+    <!-- SERVICES -->
     <section id="services">
-      <h2>Our Services</h2>
 
-      <h3>Property Advocacy</h3>
-      <p>
-        Support and representation on civil property matters
-        and stakeholder concerns.
-      </p>
+        <div class="section-title">
+            <div class="small-title">What We Do</div>
 
-      <h3>Land & Property Guidance</h3>
-      <p>
-        Practical guidance on property documentation,
-        transactions and land-related concerns.
-      </p>
+            <h2>Property Support Under One Roof</h2>
 
-      <h3>Landlord & Tenant Support</h3>
-      <p>
-        Information and assistance around rent, tenancy
-        disputes, notices and property-related concerns.
-      </p>
+            <p>
+                KEPIA provides a range of services and support designed to
+                help property stakeholders navigate property-related
+                challenges.
+            </p>
+        </div>
 
-      <h3>Property Management</h3>
-      <p>
-        Support for property owners and managers in
-        managing rent collection and tenant relations.
-      </p>
+        <div class="services-grid">
 
-      <h3>Education & Forums</h3>
-      <p>
-        Property education, stakeholder forums and
-        networking opportunities.
-      </p>
+            <div class="service-card">
+                <div class="service-icon">01</div>
+                <h3>Property & Land Matters</h3>
+                <p>
+                    Support and guidance on property ownership, land matters,
+                    documentation and property-related challenges.
+                </p>
+            </div>
 
-      <h3>Property Rights</h3>
-      <p>
-        Helping stakeholders understand their rights and
-        available dispute-resolution channels.
-      </p>
+            <div class="service-card">
+                <div class="service-icon">02</div>
+                <h3>Dispute Support</h3>
+                <p>
+                    Assistance and representation in appropriate property,
+                    tenancy and civil dispute matters through relevant
+                    processes and institutions.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">03</div>
+                <h3>Land Fraud Support</h3>
+                <p>
+                    Guidance on suspected land and property fraud, document
+                    verification and appropriate reporting channels.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">04</div>
+                <h3>Property Management</h3>
+                <p>
+                    Property management support including tenant relations,
+                    rent collection and general property administration.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">05</div>
+                <h3>Legal & Documentation Support</h3>
+                <p>
+                    Assistance in navigating property documentation and
+                    connecting members with appropriate professional support.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">06</div>
+                <h3>Education & Advocacy</h3>
+                <p>
+                    Property forums, awareness initiatives and advocacy aimed
+                    at improving knowledge of property rights and responsibilities.
+                </p>
+            </div>
+
+        </div>
+
     </section>
 
-    <hr>
+    <!-- STATS -->
+    <section class="stats">
 
-    <section id="membership">
-      <h2>Membership</h2>
+        <div class="stats-grid">
 
-      <h3>Individual Membership</h3>
-      <p><strong>KSh 30,000</strong> one-time.</p>
-      <p>
-        Annual renewal from the second year:
-        KSh 3,000.
-      </p>
+            <div class="stat">
+                <h3>70,000+</h3>
+                <p>Property Stakeholders Reached</p>
+            </div>
 
-      <h3>Professional Membership</h3>
-      <p><strong>KSh 50,000</strong> one-time.</p>
-      <p>
-        Annual renewal from the second year:
-        KSh 5,000.
-      </p>
+            <div class="stat">
+                <h3>500+</h3>
+                <p>Property Matters Successfully Supported</p>
+            </div>
 
-      <h3>Corporate Membership</h3>
-      <p><strong>KSh 100,000</strong></p>
-      <p>Corporate membership with certificate.</p>
+            <div class="stat">
+                <h3>2020</h3>
+                <p>Association Registration</p>
+            </div>
 
-      <p>
-        <a href="tel:+254769545969">
-          Call 0769 545 969 to enquire about membership
-        </a>
-      </p>
+            <div class="stat">
+                <h3>KEPIA</h3>
+                <p>Your Property Rights Platform</p>
+            </div>
+
+        </div>
+
     </section>
 
-    <hr>
+    <!-- MEMBERSHIP -->
+    <section class="membership" id="membership">
 
+        <div class="section-title">
+
+            <div class="small-title">Membership</div>
+
+            <h2>Become Part of KEPIA</h2>
+
+            <p>
+                Membership gives property stakeholders a platform for
+                support, information, representation and participation
+                in KEPIA activities.
+            </p>
+
+        </div>
+
+        <div class="membership-grid">
+
+            <div class="membership-card">
+                <h3>Individual</h3>
+
+                <div class="price">KSh 30,000</div>
+
+                <ul>
+                    <li>One-time joining fee</li>
+                    <li>KSh 3,000 annual fee from second year</li>
+                    <li>Access to member support</li>
+                    <li>Participation in KEPIA activities</li>
+                </ul>
+            </div>
+
+            <div class="membership-card">
+                <h3>Professional</h3>
+
+                <div class="price">KSh 50,000</div>
+
+                <ul>
+                    <li>One-time joining fee</li>
+                    <li>KSh 5,000 annual fee from second year</li>
+                    <li>Professional membership recognition</li>
+                    <li>Access to member support</li>
+                </ul>
+            </div>
+
+            <div class="membership-card">
+                <h3>Corporate</h3>
+
+                <div class="price">KSh 100,000</div>
+
+                <ul>
+                    <li>Corporate membership</li>
+                    <li>Certificate issued</li>
+                    <li>Organisational support</li>
+                    <li>Participation in KEPIA activities</li>
+                </ul>
+            </div>
+
+            <div class="membership-card">
+                <h3>Associate</h3>
+
+                <div class="price">Contact Us</div>
+
+                <ul>
+                    <li>Associate recognition</li>
+                    <li>Certificate in company name</li>
+                    <li>Access to relevant KEPIA activities</li>
+                    <li>Connect with the KEPIA network</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div style="text-align:center;margin-top:35px;">
+            <a href="#contact" class="btn-primary"
+               style="background:#6b2333;color:white;">
+                Enquire About Membership
+            </a>
+        </div>
+
+    </section>
+
+    <!-- WHO WE SERVE -->
     <section>
-      <h2>Tenants Guide</h2>
 
-      <p><strong>Know your rights.</strong></p>
+        <div class="section-title">
 
-      <p>
-        A practical guide covering common tenancy concerns
-        including eviction, harassment, rent changes,
-        deposits, sewage and demolitions.
-      </p>
+            <div class="small-title">Who We Serve</div>
 
-      <p><strong>KSh 300</strong></p>
-      <p>Free for KEPIA members.</p>
+            <h2>A Platform for Property Stakeholders</h2>
 
-      <p>
-        <a href="tel:+254769545969">
-          Order / Enquire
-        </a>
-      </p>
+            <p>
+                KEPIA recognises that different property stakeholders face
+                different challenges.
+            </p>
+
+        </div>
+
+        <div class="audience-grid">
+
+            <div class="audience-card">
+                <h3>Property Owners & Investors</h3>
+                <p>
+                    Support for individuals and organisations dealing with
+                    property ownership, land matters, investment decisions,
+                    documentation and property disputes.
+                </p>
+            </div>
+
+            <div class="audience-card">
+                <h3>Landlords & Property Managers</h3>
+                <p>
+                    Practical support on tenant relations, rent matters,
+                    property administration, dispute handling and responsible
+                    property management.
+                </p>
+            </div>
+
+            <div class="audience-card">
+                <h3>Tenants</h3>
+                <p>
+                    Information and guidance on tenancy responsibilities,
+                    rent matters, eviction concerns, harassment, deposits
+                    and other tenancy-related issues.
+                </p>
+            </div>
+
+            <div class="audience-card">
+                <h3>Corporate Property Stakeholders</h3>
+                <p>
+                    Support for organisations dealing with commercial
+                    property, leases, property management and other
+                    property-related matters.
+                </p>
+            </div>
+
+        </div>
+
     </section>
 
-    <hr>
+    <!-- WHY KEPIA -->
+    <section class="intro">
 
+        <div class="section-title">
+
+            <div class="small-title">Why KEPIA</div>
+
+            <h2>A Platform Built Around Property</h2>
+
+            <p>
+                KEPIA brings property stakeholders together through
+                information, support, representation and advocacy.
+            </p>
+
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+                <div class="why-number">01</div>
+                <h3>Member Focus</h3>
+                <p>
+                    Our membership platform is designed around the practical
+                    needs of property stakeholders.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-number">02</div>
+                <h3>Practical Support</h3>
+                <p>
+                    We help members understand and navigate property-related
+                    challenges and processes.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-number">03</div>
+                <h3>Property Knowledge</h3>
+                <p>
+                    We promote awareness of property rights, responsibilities,
+                    risks and opportunities.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-number">04</div>
+                <h3>Representation</h3>
+                <p>
+                    KEPIA provides a collective platform for property
+                    stakeholders to raise legitimate concerns.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-number">05</div>
+                <h3>Professional Network</h3>
+                <p>
+                    Members can connect with relevant professionals and
+                    property stakeholders.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-number">06</div>
+                <h3>Communication</h3>
+                <p>
+                    We believe clear and timely communication is essential
+                    when dealing with property matters.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- OKOA MAISHA -->
+    <section class="okoa" id="resources">
+
+        <div class="okoa-box">
+
+            <h2>Okoa Maisha</h2>
+
+            <p>
+                Okoa Maisha is a KEPIA emergency response initiative aimed
+                at supporting vulnerable property stakeholders and responding
+                to urgent situations affecting members and communities.
+            </p>
+
+            <p>
+                Through this initiative, KEPIA seeks to strengthen emergency
+                response, community support and protection of people and
+                property during times of need.
+            </p>
+
+            <a href="https://www.mchanga.africa/fundraiser/115937"
+               target="_blank"
+               class="btn-primary"
+               style="background:#6b2333;color:white;">
+                Support Okoa Maisha
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- RESOURCES -->
     <section>
-      <h2>Okoa Maisha</h2>
 
-      <p>
-        KEPIA's emergency-response and community-support
-        initiative.
-      </p>
+        <div class="section-title">
 
-      <p>
-        <a href="https://www.mchanga.africa/fundraiser/115937">
-          Support Okoa Maisha
-        </a>
-      </p>
+            <div class="small-title">Resources</div>
+
+            <h2>Knowledge That Protects</h2>
+
+            <p>
+                Access useful information and educational material designed
+                to help property stakeholders make informed decisions.
+            </p>
+
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-icon">A</div>
+                <h3>Tenants Guide</h3>
+                <p>
+                    Practical information covering common tenancy issues
+                    including eviction, harassment, rent increases, deposits,
+                    sewage and demolitions.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">B</div>
+                <h3>Property Information</h3>
+                <p>
+                    Educational information on property ownership,
+                    investment, management and property rights.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">C</div>
+                <h3>Property Forums</h3>
+                <p>
+                    Stay connected to KEPIA forums, awareness initiatives
+                    and discussions affecting property stakeholders.
+                </p>
+            </div>
+
+        </div>
+
     </section>
 
-    <hr>
+    <!-- FINAL CTA -->
+    <section class="cta">
 
-    <section id="contact">
-      <h2>Contact KEPIA</h2>
+        <h2>Have a Property Matter?</h2>
 
-      <p>
-        <strong>Phone:</strong>
-        <a href="tel:+254769545969">0769 545 969</a>
-      </p>
+        <p>
+            Whether you are a property owner, investor, landlord, tenant,
+            property manager or corporate stakeholder, KEPIA provides a
+            platform where you can seek information and support.
+        </p>
 
-      <p>
-        <strong>WhatsApp:</strong>
-        <a href="https://wa.me/254769545969">
-          Chat with KEPIA
-        </a>
-      </p>
+        <div class="cta-buttons">
 
-      <p>
-        <strong>Email:</strong>
-        <a href="mailto:kepia.org@gmail.com">
-          kepia.org@gmail.com
-        </a>
-      </p>
+            <a href="tel:+254769545969" class="btn-primary">
+                Call KEPIA
+            </a>
 
-      <p>
-        <strong>Website:</strong>
-        https://kepia-org.github.io/Kepia-website/
-      </p>
+            <a href="https://wa.me/254769545969"
+               target="_blank"
+               class="btn-secondary">
+                WhatsApp KEPIA
+            </a>
+
+        </div>
+
     </section>
 
-  </main>
+    <!-- FOOTER -->
+    <footer id="contact">
 
-  <hr>
+        <div class="footer-grid">
 
-  <footer>
-    <p>
-      <strong>KEPIA</strong> — Defending What's Yours.
-    </p>
-    <p>
-      © 2026 Kenya Property Investors Association
-    </p>
-  </footer>
+            <div>
+                <h3>KEPIA</h3>
+
+                <p>
+                    Kenya Property Investors Association is a platform
+                    supporting property owners, investors, landlords,
+                    tenants and property managers.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Defending What’s Yours.</strong>
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About KEPIA</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#membership">Membership</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+
+                <ul>
+                    <li>
+                        <a href="tel:+254769545969">
+                            0769 545 969
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:info@kepiah.org">
+                            info@kepiah.org
+                        </a>
+                    </li>
+
+                    <li>Nairobi, Kenya</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Online</h3>
+
+                <ul>
+                    <li>
+                        <a href="https://www.kepiah.org" target="_blank">
+                            www.kepiah.org
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.facebook.com/KEPIA"
+                           target="_blank">
+                            Facebook
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <div>
+                © 2026 Kenya Property Investors Association (KEPIA).
+                All rights reserved.
+            </div>
+
+            <div>
+                Impeccable communication is key.
+            </div>
+
+        </div>
+
+    </footer>
 
 </body>
 </html>
