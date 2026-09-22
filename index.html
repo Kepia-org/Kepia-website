@@ -531,6 +531,35 @@
             .nav-links {
                 display: none;
             }
+                .menu-toggle {
+        display: block;
+        background: #6b2333;
+        color: white;
+        border: none;
+        font-size: 24px;
+        padding: 7px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .nav-links.active {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        gap: 0;
+        padding: 15px 0;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active li {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
 
             .intro-grid,
             .audience-grid {
