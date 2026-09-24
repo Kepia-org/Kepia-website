@@ -194,3 +194,9 @@ footer {
     margin-right: 0;
   }
 }
+.logo-image img {
+  width: 90px !important;
+  height: 90px !important;
+  max-width: 90px !important;
+  object-fit: contain;
+}
